@@ -2,8 +2,8 @@
 #include <stdio.h>
 int main (void)
 {
-    short int i = 65534;
-    unsigned short int j = 6   5534;
+    short int i = 32768;
+    unsigned short int j = 65536;
 
     printf ("%d %d %d\n", i, i+1, i+2);
     printf ("%u %u %u\n", j, j+1, j+2);
