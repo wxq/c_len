@@ -27,8 +27,8 @@ int main(void) {
     start = get_int();
     printf("upper limit: ");
     stop = get_int();
-    while(start != 0 || stop != 0) {
-        if(bad_limits(start, stop, MIN, MAX))
+    while (start != 0 || stop != 0) {
+        if (bad_limits(start, stop, MIN, MAX))
             printf("Please try again.\n");
         else {
             answer = sum_squares(start, stop);
@@ -50,8 +50,8 @@ int get_int(void) {
     int input;
     char ch;
 
-    while(scanf("%d", &input) != 1) {
-        while((ch = getchar()) != '\n')
+    while (scanf("%d", &input) != 1) {
+        while ((ch = getchar()) != '\n')
             putchar(ch);        // 剔除错误的输入
         printf(" is not an integer.\nPlease enter an ");
         printf("integer value, such as 25, -178, or 3: ");
@@ -63,7 +63,7 @@ double sum_squares(int a, int b) {
     double total = 0;
     int i;
 
-    for(i = a; i <= b; i++)
+    for (i = a; i <= b; i++)
         total += i * i;
 
     return total;
@@ -72,15 +72,15 @@ double sum_squares(int a, int b) {
 bool bad_limits(int begin, int end, int low, int high) {
     bool not_good = false;
 
-    if(begin>end) {
+    if (begin>end) {
         printf("%d isn't smaller than %d.\n", begin, end);
         not_good = true;
     }
-    if(begin < low || end < low) {
+    if (begin < low || end < low) {
         printf("Values must be %d or greater.\n", low);
         not_good = true;
     }
-    if(begin > high || end > high) {
+    if (begin > high || end > high) {
         printf("Values must be %d or less.\n", high);
         not_good = true;
     }
